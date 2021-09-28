@@ -17,10 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::name('admin.')->group(function () {
     Route::middleware('guest:admin')->group(function () {
-        Route::get('/login', [AuthController::class, 'login'])->name('login');
+        // Route::get('/login', [AuthController::class, 'login'])->name('login');
+        Route::view('/login', 'app')->name('login');
     });
 
     Route::middleware('auth:admin')->group(function () {
-        Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
+        // Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
+        Route::view('/', 'app')->name('dashboard.index');
     });
 });
