@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TableController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +20,6 @@ Route::middleware('guest:admin')->group(function () {
 });
 
 // Route::middleware('auth:admin')->group(function () {
-//     Route::get('', [DashboardController::class, '']);
+//     Route::get('', [TableController::class, '']);
 // });
+Route::get('/table/bookings', [TableController::class, 'booking']);

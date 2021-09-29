@@ -15,11 +15,14 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        Admin::insert([
+        $admins = [
             [
                 'username'  => 'admin',
                 'password'  => Hash::make('123456'),
             ],
-        ]);
+        ];
+
+        foreach ($admins as $admin)
+        Admin::create($admin);
     }
 }

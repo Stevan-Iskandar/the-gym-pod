@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::insert([
+        $users = [
             [
                 'name'      => 'Asep',
                 'email'     => 'asep@email.com',
@@ -28,6 +28,9 @@ class UserSeeder extends Seeder
                 'phone'     => '08123456788',
                 'password'  => Hash::make('123456'),
             ],
-        ]);
+        ];
+
+        foreach ($users as $user)
+        User::create($user);
     }
 }

@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class TableController extends Controller
 {
-    public function index(Request $request)
+    public function booking(Request $request)
     {
         $bookings = Booking::with(['pod', 'user'])->get();
-        dd($bookings);
+        return response()->json($bookings);
     }
 }

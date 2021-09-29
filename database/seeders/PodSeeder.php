@@ -14,7 +14,7 @@ class PodSeeder extends Seeder
      */
     public function run()
     {
-        Pod::insert([
+        $pods = [
             [
                 'name'  => 'Pod 1',
                 'price' => 100000,
@@ -23,6 +23,13 @@ class PodSeeder extends Seeder
                 'name'  => 'Pod 2',
                 'price' => 120000,
             ],
-        ]);
+            [
+                'name'  => 'Pod 3',
+                'price' => 150000,
+            ],
+        ];
+
+        foreach ($pods as $pod)
+        Pod::create($pod);
     }
 }

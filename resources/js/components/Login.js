@@ -84,7 +84,7 @@ class Login extends Component {
             if (response.status == 200)
             this.props.history.push('/');
         }).catch(error => {
-            console.log(error.response)
+            // console.log(error.response)
             if (error.response.status == 422)
             this.setState({
                 errors: error.response.data.errors
